@@ -1,6 +1,34 @@
-Primera linea de comando
-Segunda linea de comando
-Tercera linea de comando
-Cuarta linea de comando
-quinta linea de comando
-sexta de leonardo
+internal class Ejercico4
+{
+    // metodo para elevar 2 numeros
+    public static double ElevarDosValores(int a, int b)
+    {
+        double resultado = Math.Pow(a, b);
+        return resultado;
+    }
+    // metodo principal
+    static void Main(string[] args)
+    {
+        // Pedir la Base
+        Console.WriteLine("Ingrese la base:");
+        if (!int.TryParse(Console.ReadLine(), out int a) || a < 0)
+        {
+            Console.WriteLine("Numero 1 invalido!");
+            a = 0;
+        }
+
+        // Pedir el Exponente
+        Console.WriteLine("Ingrese el exponente: ");
+        if (!int.TryParse(Console.ReadLine(), out int b) || b < 0)
+        {
+            Console.WriteLine("Numero 2 Invalido!");
+            b = 0;
+        }
+        // llama el metodo y guarda el resultado
+        double resultado = Ejercico4.ElevarDosValores(a, b);
+        Console.WriteLine("El resultado de " + a + " elevado a la " + b + " es : " + resultado );
+        Ejercico4.ElevarDosValores(a, b);
+
+        Console.ReadKey();
+    }
+}
