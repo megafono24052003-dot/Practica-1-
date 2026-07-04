@@ -1,34 +1,40 @@
-internal class Ejercico4
+using Proyecto_biblioteca;
+using System;
+
+namespace ProyectoBiblioteca
 {
-    // metodo para elevar 2 numeros
-    public static double ElevarDosValores(int a, int b)
+    class Program
     {
-        double resultado = Math.Pow(a, b);
-        return resultado;
-    }
-    // metodo principal
-    static void Main(string[] args)
-    {
-        // Pedir la Base
-        Console.WriteLine("Ingrese la base:");
-        if (!int.TryParse(Console.ReadLine(), out int a) || a < 0)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Numero 1 invalido!");
-            a = 0;
-        }
+            Console.Write("Ingrese su nombre: ");
+            string nombre = Console.ReadLine();
 
-        // Pedir el Exponente
-        Console.WriteLine("Ingrese el exponente: ");
-        if (!int.TryParse(Console.ReadLine(), out int b) || b < 0)
-        {
-            Console.WriteLine("Numero 2 Invalido!");
-            b = 0;
-        }
-        // llama el metodo y guarda el resultado
-        double resultado = Ejercico4.ElevarDosValores(a, b);
-        Console.WriteLine("El resultado de " + a + " elevado a la " + b + " es : " + resultado );
-        Ejercico4.ElevarDosValores(a, b);
+            BibliotecaLeonardo.Saludar(nombre);
 
-        Console.ReadKey();
+            Console.Write("\nIngrese su edad: ");
+            int edad = int.Parse(Console.ReadLine());
+
+            BibliotecaAlex.MostrarEdad(edad);
+
+            Console.Write("\nIngrese la nota 1: ");
+            double nota1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Ingrese la nota 2: ");
+            double nota2 = double.Parse(Console.ReadLine());
+
+            BibliotecaBrandon.MostrarPromedio(nota1, nota2);
+
+            Console.Write("\nIngrese el primer número: ");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Ingrese el segundo número: ");
+            int num2 = int.Parse(Console.ReadLine());
+
+            BibliotecaJulian.MostrarNumeroMayor(num1, num2);
+
+            Console.WriteLine("\nPresione una tecla para salir...");
+            Console.ReadKey();
+        }
     }
 }
